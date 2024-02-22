@@ -21,6 +21,11 @@ using System.Collections;
 //
 // Console.WriteLine(sum);
 
+
+// BENCHMARK
+
+#region BENCHMARK
+
 var capacity = 100_000_000;
 
 // List
@@ -58,3 +63,4 @@ var capacity = 100_000_000;
 
     Console.WriteLine($"non generic: {(DateTime.Now - begin).TotalMilliseconds}");
 }
+#endregion
