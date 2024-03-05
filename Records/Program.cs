@@ -72,7 +72,6 @@ using System.Text;
 //     using var binaryReader = new BinaryReader(fileStream);
 //
 //     // ...
-//
 // }
 
 
@@ -101,14 +100,16 @@ using System.Text;
 // }
 
 
-using var streamReader = new StreamReader("names.txt");
+// using var streamReader = new StreamReader("names.txt");
+//
+// while (!streamReader.EndOfStream)
+// {
+//     var line = streamReader.ReadLine();
+//     
+//     Console.WriteLine(line);
+// }
 
-while (!streamReader.EndOfStream)
-{
-    var line = streamReader.ReadLine();
-    
-    Console.WriteLine(line);
-}
+
 
 
 
@@ -116,12 +117,18 @@ var person = new Person
 {
     FirstName = "Jamal",
     LastName = "TheBlackOne",
-    Age = 42
+    BirthDate = DateTime.Now
 };
 
 class Person
 {
+    private DateTime _birthDate;
     public required string FirstName { get; set; }
     public required string LastName { get; set; }
-    public int Age { get; set; }
+
+    public DateTime BirthDate
+    {
+        get => _birthDate;
+        set => _birthDate = value;
+    }
 }
